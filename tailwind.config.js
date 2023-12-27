@@ -5,6 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    letterSpacing: {widest: "10px"},
+    borderWidth: {
+      1: ".5px",
+      2: "2px"
+    },
     extend: {},
     colors: {
       dark_Blue: "hsl(235, 21%, 11%)",
