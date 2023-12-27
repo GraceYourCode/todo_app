@@ -12,7 +12,8 @@ export default {
       light_Grey_Blue: "hsl(234, 39%, 85%)",
       white: "white",
       dark_Grey_Blue: "hsl(234, 11%, 52%)",
-      check_Background: "linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%)"
+      first_Grad: "hsl(192, 100%, 67%)",
+      second_Grad: "hsl(280, 87%, 65%)"
     }
   },
   plugins: [],
