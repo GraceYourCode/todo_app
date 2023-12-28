@@ -1,13 +1,15 @@
+import Footer from "../Components/Footer"
 import Task from "../Components/Task"
 
-const Tasks = () => {
+const Tasks = ({dark_Mode}) => {
   return (
-    <div className="bg-dark_Grey_Blue">
-      <Task />
-      <Task />
-      <Task />
-      <Task />
-      <Task />
+    <div className={`${dark_Mode?"bg-desaturated_Blue":"bg-light_Grey"} rounded`}>
+      <Task dark_Mode={dark_Mode} />
+      <Task dark_Mode={dark_Mode} />
+      <Task dark_Mode={dark_Mode} />
+      <Task dark_Mode={dark_Mode} />
+      <Task dark_Mode={dark_Mode} />
+      <Footer dark_Mode={dark_Mode} />
     </div>
   )
 }

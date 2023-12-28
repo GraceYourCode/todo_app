@@ -18,7 +18,13 @@ export default {
       white: "white",
       dark_Grey_Blue: "hsl(234, 11%, 52%)",
       first_Grad: "hsl(192, 100%, 67%)",
-      second_Grad: "hsl(280, 87%, 65%)"
+      second_Grad: "hsl(280, 87%, 65%)",
+      light_Grey: "hsl(0, 0%, 98%)",
+      very_Light_Grey_Blue: "hsl(236, 33%, 92%)",
+      light_Mode_Grey_Blue: "hsl(233, 11%, 84%)",
+      light_Mode_Dark_Grey_Blue: "hsl(236, 9%, 61%)",
+      light_Mode_Very_Dark_Grey_Blue: "hsl(235, 19%, 35%)",
+      bright_Blue: "hsl(220, 98%, 61%)"
     }
   },
   plugins: [],
