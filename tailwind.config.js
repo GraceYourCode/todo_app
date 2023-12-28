@@ -10,7 +10,11 @@ export default {
       1: ".5px",
       2: "2px"
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        primary: "Josefin Sans"
+      }
+    },
     colors: {
       dark_Blue: "hsl(235, 21%, 11%)",
       desaturated_Blue: "hsl(235, 24%, 19%)",
