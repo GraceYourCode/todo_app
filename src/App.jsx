@@ -10,7 +10,6 @@ const App = () => {
 
   const [tasks, setTasks] = useState([
     {id: 1, task: "Get started with your todo lists"},
-    {id: 2, task: "Get started with your todo lists"},
   ]);
 
   useEffect(() => {
@@ -20,7 +19,6 @@ const App = () => {
   useEffect(() => {
     const items = JSON.parse(localStorage.getItem("allTasks"));
     setTasks(items);
-    console.log(items)
   }, [])
 
   const toggle_Dark_Mode = () => setDark_Mode(!dark_Mode);

@@ -2,7 +2,7 @@ import { useState } from "react";
 import Check from "./Check"
 
 const Search_Bar = ({dark_Mode}) => {
-  const [value , setValue] = useState("Create a new todo...")
+  const [value , setValue] = useState("Create a new todo...");
 
   const checker_Event_Handler = (checkbox, checker) => {
     /*
