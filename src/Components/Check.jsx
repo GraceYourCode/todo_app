@@ -1,6 +1,6 @@
 import { useRef } from "react"
 
-const Check = ({dark_mode, check_Control}) => {
+const Check = ({dark_mode, check_Control, task}) => {
   const checker = useRef();
   const checkbox = useRef();
 
@@ -9,7 +9,7 @@ const Check = ({dark_mode, check_Control}) => {
 
   return (
     <>
-      <input type="checkbox" ref={checkbox} onClick={()=>check_Control(checkbox, checker)}
+      <input type="checkbox" ref={checkbox} onClick={()=>check_Control(checkbox, checker, task)}
         className={`appearance-none w-5 h-5 rounded-full ${dark_mode?"border-dark_Grey_Blue":"border-very_Light_Grey_Blue"}
       border-2 checked:bg-gradient-to-r from-first_Grad to-second_Grad checked:border-none cursor-pointer outline-none`} />
       <svg ref={checker} xmlns="http://www.w3.org/2000/svg" width="11" height="9"

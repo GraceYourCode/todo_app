@@ -1,7 +1,9 @@
+import { useEffect } from "react"
 import Footer from "../Components/Footer"
 import Task from "../Components/Task"
+import { tasks } from "../Store"
 
-const Tasks = ({dark_Mode, tasks}) => {
+const Tasks = ({dark_Mode}) => {
   return (
     <div className={`${dark_Mode?"bg-desaturated_Blue":"bg-light_Grey"} rounded`}>
       {tasks.map(task => (
