@@ -1,15 +1,12 @@
 import Footer from "../Components/Footer"
 import Task from "../Components/Task"
 
-const Tasks = ({dark_Mode}) => {
+const Tasks = ({dark_Mode, tasks}) => {
   return (
     <div className={`${dark_Mode?"bg-desaturated_Blue":"bg-light_Grey"} rounded`}>
-      <Task dark_Mode={dark_Mode} />
-      <Task dark_Mode={dark_Mode} />
-      <Task dark_Mode={dark_Mode} />
-      <Task dark_Mode={dark_Mode} />
-      <Task dark_Mode={dark_Mode} />
-      <Footer dark_Mode={dark_Mode} />
+      {tasks.map(task => {
+        <Task dark_Mode={dark_Mode} task={task} key={task.id} />
+      })}
     </div>
   )
 }

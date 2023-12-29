@@ -1,9 +1,10 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Check from "./Check"
 
-const Task = ({dark_Mode}) => {
+const Task = ({dark_Mode, task}) => {
   const [checked, setChecked] = useState(false);
   const del_Btn = useRef();
+  useEffect(()=>console.log(task))
 
   const checker_Event_Handler = (checkbox, checker) => {
     /*
@@ -29,7 +30,7 @@ const Task = ({dark_Mode}) => {
       <Check dark_mode={dark_Mode} check_Control={checker_Event_Handler} />
       <p className={`w-4/5 text-sm ${dark_Mode?(checked?"text-dark_Grey_Blue":"text-light_Grey_Blue"):
       (checked?"text-light_Mode_Dark_Grey_Blue":"text-light_Mode_Very_Dark_Grey_Blue")} 
-      ${checked && "line-through"}`}>Complete online javascript course</p>
+      ${checked && "line-through"}`}>{task}</p>
       <button className="hidden" ref={del_Btn}>
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path fill="#494C6B" fillRule="evenodd" d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"/></svg>
       </button>
