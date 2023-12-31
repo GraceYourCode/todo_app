@@ -1,5 +1,3 @@
-import toggle_Icon from "../assets/icon-sun.svg";
-
 const Nav_Bar = ({dark_Mode, setTheme}) => {
   return (
     <nav className="flex items-center justify-between">

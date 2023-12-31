@@ -1,7 +1,7 @@
-export let tasks = [
-  { id: 1, task: "Get started with your todo lists" }
-];
+import { createContext } from "react";
 
-export const edit = (newTasks) => tasks = newTasks;
+export const tasks = createContext("");
 
-export default {tasks, edit};
+export const count = createContext("")
+
+export default { tasks, count };
