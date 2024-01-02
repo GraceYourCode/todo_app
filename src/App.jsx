@@ -6,8 +6,7 @@ import light_Mode_Mobile_Background from "./assets/bg-mobile-light.jpg";
 import Nav_Bar from "./Components/Nav_Bar";
 import Search_Bar from "./Components/Search_Bar";
 import Tasks from "./Layout/Tasks";
-import { display, tasks } from "./Store";
-import { useMediaQuery } from "react-responsive";
+import { tasks } from "./Store";
 
 const App = () => {
   let [dark_Mode, setDark_Mode] = useState(false);
@@ -30,8 +29,6 @@ const App = () => {
 
   let [completedTasks, setCompletedTasks] = useState();
 
-  const isMobile = useMediaQuery({query: "(min-wiidth: 300px)"});
-
   useEffect(() => {
     let items = JSON.parse(localStorage.getItem("allTasks"));
     let colorTheme = JSON.parse(localStorage.getItem("preferred-color-theme"));
@@ -51,7 +48,7 @@ const App = () => {
   return (
     <tasks.Provider value={{ allTasks, setAllTasks, filter, setFilter, activeTasks, setActiveTasks, completedTasks, setCompletedTasks }}>
         <img src={dark_Mode ? dark_Mode_Desktop_Background : light_Mode_Desktop_Background} alt="Backgound image" className="fixed z-20 w-full" />
-        {isMobile && <img src={dark_Mode ? dark_Mode_Mobile_Background : light_Mode_Mobile_Background} alt="Backgound image" className="fixed z-20 w-full" />}
+        <img src={dark_Mode ? dark_Mode_Mobile_Background : light_Mode_Mobile_Background} alt="Backgound image" className="fixed z-20 w-full" />
         <div className={`${dark_Mode ? "bg-dark_Blue" : "bg-very_Light_Grey_Blue"} min-h-full w-full absolute flex justify-center items-center font-primary`}>
           <main className="2xl:w-1/3 xl:w-2/5 lg:w-1/2 md:w-2/3 sm:w-3/4 w-5/6 z-30 flex-col flex xl:gap-8 lg:gap-6 md:gap-5 gap-4 py-10">
             <Nav_Bar dark_Mode={dark_Mode} setTheme={() => toggle_Dark_Mode()} />

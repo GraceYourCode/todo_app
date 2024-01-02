@@ -5,7 +5,7 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    letterSpacing: {widest: "10px"},
+    letterSpacing: { widest: "10px" },
     borderWidth: {
       1: ".5px",
       2: "2px"
@@ -30,6 +30,10 @@ export default {
       light_Mode_Dark_Grey_Blue: "hsl(236, 9%, 61%)",
       light_Mode_Very_Dark_Grey_Blue: "hsl(235, 19%, 35%)",
       bright_Blue: "hsl(220, 98%, 61%)",
+    },
+    screens: {
+      xs: "310px",
+      sm: ""
     }
   },
   plugins: [],
