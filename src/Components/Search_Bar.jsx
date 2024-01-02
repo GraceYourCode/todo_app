@@ -35,7 +35,7 @@ const Search_Bar = ({ dark_Mode }) => {
 
   return (
     // here is the div container which holds the search bar and checkbox for the task
-    <div className={`${dark_Mode ? "bg-desaturated_Blue" : "bg-light_Grey"} px-3 md:px-4 lg:px-6 py-4 rounded flex gap-5 items-center`}>
+    <div className={`${dark_Mode ? "bg-desaturated_Blue" : "bg-light_Grey"} px-3 md:px-4 lg:px-6 py-4 rounded flex gap-3.5 lg:gap-5 items-center`}>
       <Check dark_mode={dark_Mode} check_Control={add_Task} task={task_Text} />
       <input type="text" placeholder="Create a new todo..." ref={task_Text}
         /*
@@ -43,7 +43,7 @@ const Search_Bar = ({ dark_Mode }) => {
          white because tailwind css doesn't come with a way of removig backgrounds
         */
         style={{ background: "none"}}
-        className={`${dark_Mode ? "text-light_Grey_Blue" : "text-light_Mode_Very_Dark_Grey_Blue"} outline-none w-full`}
+        className={`${dark_Mode ? "text-light_Grey_Blue" : "text-light_Mode_Very_Dark_Grey_Blue"} outline-none w-full bg-first_Grad`}
       />
     </div>
   )
