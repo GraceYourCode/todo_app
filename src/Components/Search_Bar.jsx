@@ -42,7 +42,7 @@ const Search_Bar = ({ dark_Mode }) => {
          here i want to write an inline styling to remove the default background of this input tag which is 
          white because tailwind css doesn't come with a way of removig backgrounds
         */
-        style={{ background: "none"}}
+        // style={{ background: "none"}}
         className={`${dark_Mode ? "text-light_Grey_Blue" : "text-light_Mode_Very_Dark_Grey_Blue"} outline-none w-full bg-first_Grad`}
       />
     </div>
