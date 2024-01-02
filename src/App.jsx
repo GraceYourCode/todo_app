@@ -53,7 +53,7 @@ const App = () => {
         <img src={dark_Mode ? dark_Mode_Desktop_Background : light_Mode_Desktop_Background} alt="Backgound image" className="fixed z-20 w-full" />
         {isMobile && <img src={dark_Mode ? dark_Mode_Mobile_Background : light_Mode_Mobile_Background} alt="Backgound image" className="fixed z-20 w-full" />}
         <div className={`${dark_Mode ? "bg-dark_Blue" : "bg-very_Light_Grey_Blue"} min-h-full w-full absolute flex justify-center items-center font-primary`}>
-          <main className="2xl:w-1/3 xl:w-2/5 lg:w-1/2 md:w-2/3 sm:w-3/4 w-full z-30 flex-col flex xl:gap-8 lg:gap-6 md:gap-5 gap-4 py-10">
+          <main className="2xl:w-1/3 xl:w-2/5 lg:w-1/2 md:w-2/3 sm:w-3/4 w-56 z-30 flex-col flex xl:gap-8 lg:gap-6 md:gap-5 gap-4 py-10">
             <Nav_Bar dark_Mode={dark_Mode} setTheme={() => toggle_Dark_Mode()} />
             <Search_Bar dark_Mode={dark_Mode} />
             <Tasks dark_Mode={dark_Mode} />
