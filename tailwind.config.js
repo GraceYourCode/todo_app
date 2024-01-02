@@ -33,7 +33,12 @@ export default {
     },
     screens: {
       xs: "310px",
-      sm: ""
+      sm: "480px",
+      md: "680px",
+      "2md": "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1440px"
     }
   },
   plugins: [],
