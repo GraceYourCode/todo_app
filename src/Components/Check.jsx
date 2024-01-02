@@ -9,7 +9,7 @@ const Check = ({dark_mode, check_Control, task, completed}) => {
   return (
     <>
       <input type="checkbox" ref={checkbox} onClick={()=>check_Control(checkbox, checker, task)} checked={completed}
-        className={`appearance-none w-3 h-3 md:w-5 md:h-5 rounded-full ${dark_mode?"border-very_Dark_Grey_Blue":"border-very_Light_Grey_Blue"}
+        className={`appearance-none w-4 h-4 md:w-5 md:h-5 rounded-full ${dark_mode?"border-very_Dark_Grey_Blue":"border-very_Light_Grey_Blue"}
       border-1 hover:border-l-first_Grad hover:border-b-first_Grad hover:border-r-second_Grad hover:border-t-second_Grad 
       checked:bg-gradient-to-r from-first_Grad to-second_Grad checked:border-none cursor-pointer outline-none`} />
       <svg ref={checker} xmlns="http://www.w3.org/2000/svg" width="11" height="9" style={{marginLeft: "5px"}}
