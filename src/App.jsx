@@ -30,7 +30,7 @@ const App = () => {
 
   let [completedTasks, setCompletedTasks] = useState();
 
-  const isMobile = useMediaQuery({query: "(min-wiidth: 375px)"});
+  const isMobile = useMediaQuery({query: "(min-wiidth: 300px)"});
 
   useEffect(() => {
     let items = JSON.parse(localStorage.getItem("allTasks"));
