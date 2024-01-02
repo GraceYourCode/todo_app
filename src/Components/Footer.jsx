@@ -58,13 +58,11 @@ const Footer = ({ dark_Mode, items }) => {
         <button onClick={() => clearCompleted()} className={`${dark_Mode ? "hover:text-very_Light_Grey_Blue" :
           "hover:text-light_Mode_Very_Dark_Grey_Blue"}`}>Clear completed</button>
       </div>
-      <main className="flex gap-3 landscape:hidden justify-center items-center">
-        <button className={filter.all ? "text-bright_Blue" : `${dark_Mode ? "hover:text-very_Light_Grey_Blue" :
-          "hover:text-light_Mode_Very_Dark_Grey_Blue"}`} onClick={() => displayAll()}>All</button>
-        <button className={filter.active ? "text-bright_Blue" : `${dark_Mode ? "hover:text-very_Light_Grey_Blue" :
-          "hover:text-light_Mode_Very_Dark_Grey_Blue"}`} onClick={() => displayActive()}>Active</button>
-        <button className={filter.completed ? "text-bright_Blue" : `${dark_Mode ? "hover:text-very_Light_Grey_Blue" :
-          "hover:text-light_Mode_Very_Dark_Grey_Blue"}`} onClick={() => displayCompleted()}>Completed</button>
+      <main className={`${dark_Mode ? "text-dark_Grey_Blue bg-desaturated_Blue" : "text-light_Mode_Dark_Grey_Blue bg-light_Grey"} 
+      flex gap-3 landscape:hidden justify-center text-xs md:text-sm items-center`}>
+        <button className={filter.all ? "text-bright_Blue" : undefined} onClick={() => displayAll()}>All</button>
+        <button className={filter.active ? "text-bright_Blue" : undefined} onClick={() => displayActive()}>Active</button>
+        <button className={filter.completed ? "text-bright_Blue" : undefined} onClick={() => displayCompleted()}>Completed</button>
       </main>
     </>
   )

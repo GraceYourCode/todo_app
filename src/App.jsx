@@ -47,7 +47,7 @@ const App = () => {
 
   return (
     <tasks.Provider value={{ allTasks, setAllTasks, filter, setFilter, activeTasks, setActiveTasks, completedTasks, setCompletedTasks }}>
-        <img src={dark_Mode ? dark_Mode_Desktop_Background : light_Mode_Desktop_Background} alt="Backgound image" className="fixed z-20 w-full lg:block hidden" />
+        <img src={dark_Mode ? dark_Mode_Desktop_Background : light_Mode_Desktop_Background} alt="Backgound image" className="fixed z-20 w-full 2md:block hidden" />
         <img src={dark_Mode ? dark_Mode_Mobile_Background : light_Mode_Mobile_Background} alt="Backgound image" className="fixed z-20 w-full 2md:hidden" />
         <div className={`${dark_Mode ? "bg-dark_Blue" : "bg-very_Light_Grey_Blue"} min-h-full w-full absolute flex justify-center items-center font-primary`}>
           <main className="2xl:w-1/3 xl:w-2/5 lg:w-1/2 md:w-2/3 sm:w-3/4 w-5/6 z-30 flex-col flex xl:gap-8 lg:gap-6 md:gap-5 gap-4 py-10">
