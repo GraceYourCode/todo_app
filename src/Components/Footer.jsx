@@ -59,7 +59,7 @@ const Footer = ({ dark_Mode, items }) => {
           "hover:text-light_Mode_Very_Dark_Grey_Blue"}`}>Clear completed</button>
       </div>
       <main className={`${dark_Mode ? "text-dark_Grey_Blue bg-desaturated_Blue" : "text-light_Mode_Dark_Grey_Blue bg-light_Grey"} 
-      flex gap-3 landscape:hidden justify-center text-xs md:text-sm items-center`}>
+      flex gap-3 landscape:hidden justify-center text-xs md:text-sm items-center mt-4 md:mt-5 py-4`}>
         <button className={filter.all ? "text-bright_Blue" : undefined} onClick={() => displayAll()}>All</button>
         <button className={filter.active ? "text-bright_Blue" : undefined} onClick={() => displayActive()}>Active</button>
         <button className={filter.completed ? "text-bright_Blue" : undefined} onClick={() => displayCompleted()}>Completed</button>
