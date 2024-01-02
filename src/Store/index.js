@@ -2,6 +2,6 @@ import { createContext } from "react";
 
 export const tasks = createContext("");
 
-export const count = createContext("")
+export const display = createContext("")
 
-export default { tasks, count };
+export default { tasks, display };

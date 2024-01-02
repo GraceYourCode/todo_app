@@ -1,19 +1,19 @@
 import { useRef } from "react"
 
-const Check = ({dark_mode, check_Control, task}) => {
+const Check = ({dark_mode, check_Control, task, completed}) => {
   const checker = useRef();
   const checkbox = useRef();
-
   /*checking if the checkbox has been checked */
   // checkbox.checked ? checker.current.style.visibility = "auto" : checker.current.style.visibility = "hidden";
 
   return (
     <>
-      <input type="checkbox" ref={checkbox} onClick={()=>check_Control(checkbox, checker, task)}
-        className={`appearance-none w-5 h-5 rounded-full ${dark_mode?"border-dark_Grey_Blue":"border-very_Light_Grey_Blue"}
-      border-2 checked:bg-gradient-to-r from-first_Grad to-second_Grad checked:border-none cursor-pointer outline-none`} />
-      <svg ref={checker} xmlns="http://www.w3.org/2000/svg" width="11" height="9"
-      className="absolute ml-1 hidden"
+      <input type="checkbox" ref={checkbox} onClick={()=>check_Control(checkbox, checker, task)} checked={completed}
+        className={`appearance-none w-5 h-5 rounded-full ${dark_mode?"border-very_Dark_Grey_Blue":"border-very_Light_Grey_Blue"}
+      border-1 hover:border-l-first_Grad hover:border-b-first_Grad hover:border-r-second_Grad hover:border-t-second_Grad 
+      checked:bg-gradient-to-r from-first_Grad to-second_Grad checked:border-none cursor-pointer outline-none`} />
+      <svg ref={checker} xmlns="http://www.w3.org/2000/svg" width="11" height="9" style={{marginLeft: "5px"}}
+      className={`absolute ${completed ? "block" : "hidden"}`}
       ><path fill="none" stroke="#FFF" strokeWidth="2" d="M1 4.304L3.696 7l6-6"/></svg>
     </>
   )

@@ -4,29 +4,50 @@ import light_Mode_Background from "./assets/bg-desktop-light.jpg";
 import Nav_Bar from "./Components/Nav_Bar";
 import Search_Bar from "./Components/Search_Bar";
 import Tasks from "./Layout/Tasks";
-import { tasks } from "./Store";
+import { display, tasks } from "./Store";
 
 const App = () => {
-  const [dark_Mode, setDark_Mode] = useState(false);
-  const [allTasks, setAllTasks] = useState([
-    { id: 1, task: "Get started with your todo app" }
+  let [dark_Mode, setDark_Mode] = useState(false);
+
+  /*
+    this alltasks is a declaration of all the tasks collected from the context of the todo
+    app in ./store/js. It's the container for all the tasks
+   */
+  let [allTasks, setAllTasks] = useState([
+    { id: 1, task: "Get started with your todo app", completed: false }
   ]);
+
+  let [filter, setFilter] = useState({
+    all: true,
+    completed: false,
+    active: false
+  });
+
+  let [activeTasks, setActiveTasks] = useState("");
+
+  let [completedTasks, setCompletedTasks] = useState();
 
   useEffect(() => {
     let items = JSON.parse(localStorage.getItem("allTasks"));
+    let colorTheme = JSON.parse(localStorage.getItem("preferred-color-theme"));
     if (!items) {
-      return
-    } else setAllTasks(items);
+      return;
+    } else setAllTasks(allTasks = items);
+    if (colorTheme) {
+      setDark_Mode(true);
+    } else setDark_Mode(false);
   }, [])
-  allTasks.filter()
 
-  const toggle_Dark_Mode = () => setDark_Mode(!dark_Mode);
+  const toggle_Dark_Mode = () => {
+    setDark_Mode(dark_Mode = !dark_Mode);
+    localStorage.setItem("preferred-color-theme", JSON.stringify(dark_Mode));
+  }
 
   return (
-    <tasks.Provider value={{ allTasks, setAllTasks }}>
-        <img src={dark_Mode ? dark_Mode_Background : light_Mode_Background} alt="Backgound image" className="fixed z-20" />
+    <tasks.Provider value={{ allTasks, setAllTasks, filter, setFilter, activeTasks, setActiveTasks, completedTasks, setCompletedTasks }}>
+        <img src={dark_Mode ? dark_Mode_Background : light_Mode_Background} alt="Backgound image" className="fixed z-20 w-full" />
         <div className={`${dark_Mode ? "bg-dark_Blue" : "bg-very_Light_Grey_Blue"} min-h-full w-full absolute flex justify-center items-center font-primary`}>
-          <main className="w-1/3 z-30 flex-col flex gap-8 py-10">
+          <main className="2xl:w-1/3 xl:w-2/5 lg:w-1/2 md:w-2/3 sm:w-3/4 w-5/6 z-30 flex-col flex xl:gap-8 lg:gap-6 md:gap-5 gap-4 py-10">
             <Nav_Bar dark_Mode={dark_Mode} setTheme={() => toggle_Dark_Mode()} />
             <Search_Bar dark_Mode={dark_Mode} />
             <Tasks dark_Mode={dark_Mode} />

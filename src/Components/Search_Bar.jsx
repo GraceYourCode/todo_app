@@ -15,11 +15,14 @@ const Search_Bar = ({ dark_Mode }) => {
       checkbox.current.checked = false;
       return;
     } else {
-      checkbox.current.checked ? checker.current.style.display = "block" : checker.current.style.display = "none";
+      // checkbox.current.checked ? checker.current.style.display = "block" : checker.current.style.display = "none";
+      // console.log(checkbox.current.checked)
+      checker.current.style.display = "none"
       const to_UpperCase_Task = task.current.value.slice(0,1).toUpperCase() + task.current.value.slice(1);
       const new_task = {
-        id: allTasks.length + 1,
-        task: to_UpperCase_Task
+        id: Math.floor(Math.random() * 10000),
+        task: to_UpperCase_Task,
+        completed: false
       };
       let new_Tasks = [...allTasks, new_task]
       setAllTasks(allTasks = new_Tasks);
@@ -39,8 +42,8 @@ const Search_Bar = ({ dark_Mode }) => {
          here i want to write an inline styling to remove the default background of this input tag which is 
          white because tailwind css doesn't come with a way of removig backgrounds
         */
-        style={{ background: "none" }}
-        className="text-dark_Grey_Blue outline-none w-full"
+        style={{ background: "none"}}
+        className={`${dark_Mode ? "text-light_Grey_Blue" : "text-light_Mode_Very_Dark_Grey_Blue"} outline-none w-full`}
       />
     </div>
   )
