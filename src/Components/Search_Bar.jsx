@@ -35,7 +35,7 @@ const Search_Bar = ({ dark_Mode }) => {
 
   return (
     // here is the div container which holds the search bar and checkbox for the task
-    <div className={`${dark_Mode ? "bg-desaturated_Blue" : "bg-light_Grey"} px-6 py-4 rounded flex gap-5 items-center`}>
+    <div className={`${dark_Mode ? "bg-desaturated_Blue" : "bg-light_Grey"} px-3 md:px-4 lg:px-6 py-4 rounded flex gap-5 items-center`}>
       <Check dark_mode={dark_Mode} check_Control={add_Task} task={task_Text} />
       <input type="text" placeholder="Create a new todo..." ref={task_Text}
         /*
