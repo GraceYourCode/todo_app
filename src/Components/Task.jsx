@@ -31,7 +31,7 @@ const Task = ({ dark_Mode, task, delete_Task }) => {
   const cancel_Del_Btn = () => del_Btn.current.style.display = "none"
 
   return (
-    <div className="flex px-3 md:px-4 lg:px-6 py-4 gap-3.5 lg:gap-5 items-center border-b-1 border-b-dark_Grey_Blue"
+    <div className={`flex ${dark_Mode ? "bg-desaturated_Blue" : "bg-light_Grey"} px-3 md:px-4 lg:px-6 py-4 gap-3.5 lg:gap-5 items-center mb-0.5`}
       onMouseOver={() => show_Del_Btn()} onMouseOut={() => cancel_Del_Btn()}>
       <Check dark_mode={dark_Mode} check_Control={checker_Event_Handler} completed={task.completed} />
       <p className={`w-4/5 text-xs md:text-sm ${dark_Mode ? (task.completed ? "text-dark_Grey_Blue" : "text-light_Grey_Blue") :

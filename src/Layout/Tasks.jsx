@@ -21,7 +21,7 @@ const Tasks = ({ dark_Mode }) => {
   }
 
   return (
-    <div className={`${dark_Mode ? "bg-desaturated_Blue" : "bg-light_Grey"} rounded`}>
+    <div className={`rounded`}>
       {filter.all ? allTasks.map(task => (<>
         <Task dark_Mode={dark_Mode} task={task} key={task.id} delete_Task={delete_Task} /></>
       )) : filter.active ? activeTasks.map(task => (
