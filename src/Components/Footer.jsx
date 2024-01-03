@@ -55,8 +55,8 @@ const Footer = ({ dark_Mode, items }) => {
           <button className={filter.completed ? "text-bright_Blue" : `${dark_Mode ? "hover:text-very_Light_Grey_Blue" :
             "hover:text-light_Mode_Very_Dark_Grey_Blue"}`} onClick={() => displayCompleted()}>Completed</button>
         </main>
-        <button onClick={() => clearCompleted()} className={`${dark_Mode ? "xl:hover:text-very_Light_Grey_Blue" :
-          "xl:hover:text-light_Mode_Very_Dark_Grey_Blue"}`}>Clear completed</button>
+        <button onClick={() => clearCompleted()} className={`${dark_Mode ? "lg:hover:text-very_Light_Grey_Blue" :
+          "lg:hover:text-light_Mode_Very_Dark_Grey_Blue"}`}>Clear completed</button>
       </div>
       <main className={`${dark_Mode ? "text-dark_Grey_Blue bg-desaturated_Blue" : "text-light_Mode_Dark_Grey_Blue bg-light_Grey"} 
       flex gap-3 landscape:hidden justify-center text-xs md:text-sm items-center mt-4 md:mt-5 py-4`}>
