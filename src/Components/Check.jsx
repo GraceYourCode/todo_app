@@ -4,17 +4,6 @@ const Check = ({ dark_mode, check_Control, task, completed }) => {
   const checker = useRef();
   const checkbox = useRef(null);
 
-  document.addEventListener("keypress", e => {
-    console.log(e.location)
-    // e.preventDefault();
-    if (e.key === "Enter") {
-      e.preventDefault();
-      checkbox.current.check();
-      // check_Control(checkbox, checker, task);
-      // checkbox.click();
-    } else return
-  })
-
   return (
     <>
       <input type="checkbox" ref={checkbox} onClick={() => check_Control(checkbox, checker, task)} checked={completed}
