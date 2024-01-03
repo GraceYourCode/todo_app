@@ -2,17 +2,18 @@ import { useRef } from "react"
 
 const Check = ({ dark_mode, check_Control, task, completed }) => {
   const checker = useRef();
-  const checkbox = useRef();
+  const checkbox = useRef(null);
 
-  // document.addEventListener("keypress", e => {
-  //   console.log(e.key)
-  //   // e.preventDefault();
-  //   if (e.key === "Enter") {
-  //     e.preventDefault();
-  //     check_Control(checkbox, checker, task);
-  //     // checkbox.click();
-  //   } else return
-  // })
+  document.addEventListener("keypress", e => {
+    console.log(e.key)
+    // e.preventDefault();
+    if (e.key === "Enter") {
+      e.preventDefault();
+      checkbox.current.check();
+      // check_Control(checkbox, checker, task);
+      // checkbox.click();
+    } else return
+  })
 
   return (
     <>
