@@ -5,7 +5,7 @@ const Check = ({ dark_mode, check_Control, task, completed }) => {
   const checkbox = useRef(null);
 
   document.addEventListener("keypress", e => {
-    console.log(e.key)
+    console.log(e.location)
     // e.preventDefault();
     if (e.key === "Enter") {
       e.preventDefault();
