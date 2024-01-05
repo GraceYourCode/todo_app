@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from "react";
+import { useCallback, useContext, useRef, useState } from "react";
 import Check from "./Check"
 import { tasks } from "../Store";
 
@@ -7,7 +7,11 @@ const Task = ({ dark_Mode, task, delete_Task }) => {
   let { allTasks, setAllTasks } = useContext(tasks);
   const del_Btn = useRef();
   const [edit, setEdit] = useState(false);
-  const edit_Input = useRef();
+  const edit_Input = useCallback((inputElement) => {
+    if (inputElement) {
+      inputElement.focus();
+    }
+  }, []);
 
   const checker_Event_Handler = (checkbox, checker) => {
     /*
@@ -43,7 +47,7 @@ const Task = ({ dark_Mode, task, delete_Task }) => {
     <>
       {edit ? <div className={`flex ${dark_Mode ? "bg-desaturated_Blue text-light_Grey_Blue" : "bg-light_Grey text-light_Mode_Very_Dark_Grey_Blue"}
       px-3 md:px-4 lg:px-6 py-4 gap-3.5 lg:gap-5 items-center mb-0.5`}>
-        <input type="text" defaultValue={task.task} className="w-full bg-transparent outline-none text-xs md:text-sm"  />
+        <input type="text" defaultValue={task.task} className="w-full bg-transparent focus:border-2 outline-none text-xs md:text-sm" ref={edit_Input} />
         <button className="flex items-center gap-1 text-xs bg-gradient-to-r from-first_Grad to-second_Grad text-white md:px-2 px-1.5 py-0.5 md:py-1 rounded"><span>Edit</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9">
             <path fill="none" stroke="#FFF" strokeWidth="2" d="M1 4.304L3.696 7l6-6" /></svg>
