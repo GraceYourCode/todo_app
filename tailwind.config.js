@@ -34,6 +34,7 @@ export default {
       light_Mode_Dark_Grey_Blue: "hsl(236, 9%, 61%)",
       light_Mode_Very_Dark_Grey_Blue: "hsl(235, 19%, 35%)",
       bright_Blue: "hsl(220, 98%, 61%)",
+      transparent: "transparent"
     },
     screens: {
       xs: "310px",

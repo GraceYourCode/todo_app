@@ -6,7 +6,9 @@ const Search_Bar = ({ dark_Mode }) => {
   const task_Text = useRef()
   let { allTasks, setAllTasks } = useContext(tasks);
 
-  const add_Task = (checkbox, checker, task) => {
+  let {add_Task, setAdd_Task} = useContext(tasks);
+
+  const (const add_Task = (checkbox, checker, task) => {
     /*
         this function checks if the checkbox is checked or not and then
         displays the next tag(SVG tag) which is hidden by default
@@ -31,7 +33,7 @@ const Search_Bar = ({ dark_Mode }) => {
       localStorage.setItem("allTasks", JSON.stringify(new_Tasks));
     }
   }
-
+)
 
   return (
     // here is the div container which holds the search bar and checkbox for the task

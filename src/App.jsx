@@ -29,6 +29,8 @@ const App = () => {
 
   let [completedTasks, setCompletedTasks] = useState();
 
+  const [add_Task, setAdd_Task] = useState();
+
   useEffect(() => {
     let items = JSON.parse(localStorage.getItem("allTasks"));
     let colorTheme = JSON.parse(localStorage.getItem("preferred-color-theme"));
@@ -46,7 +48,7 @@ const App = () => {
   }
 
   return (
-    <tasks.Provider value={{ allTasks, setAllTasks, filter, setFilter, activeTasks, setActiveTasks, completedTasks, setCompletedTasks }}>
+    <tasks.Provider value={{ allTasks, setAllTasks, filter, setFilter, activeTasks, setActiveTasks, completedTasks, setCompletedTasks, add_Task, setAdd_Task }}>
         <img src={dark_Mode ? dark_Mode_Desktop_Background : light_Mode_Desktop_Background} alt="Backgound image" className="fixed z-20 w-full 2md:block hidden" />
         <img src={dark_Mode ? dark_Mode_Mobile_Background : light_Mode_Mobile_Background} alt="Backgound image" className="fixed z-20 w-full 2md:hidden" />
         <div className={`${dark_Mode ? "bg-dark_Blue" : "bg-very_Light_Grey_Blue"} min-h-full w-full absolute flex justify-center items-center font-primary`}>
